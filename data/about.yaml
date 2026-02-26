@@ -1,0 +1,37 @@
+# Edit this file to update the About section on the homepage
+
+tagline: "Helping organizations understand how real-world attackers exploit modern AI systems, applications, and infrastructure — then building the defenses to stop them."
+
+paragraphs:
+  - "I'm an <strong>AI Red Team leader</strong> and offensive security researcher focused on helping organizations understand how real-world attackers can exploit modern AI systems, applications, and infrastructure. My work blends hands-on adversarial testing, security strategy, and applied research to turn emerging AI risks into practical, actionable defenses."
+  - "<strong>PhantomByte Labs</strong> is my security research-focused company, built to advance AI security through offensive research, testing frameworks, and innovative tools that help organizations measure, validate, and improve their resilience."
+  - "The goal is to build trusted, high-impact security research first — then grow that foundation into products and capabilities that scale."
+
+tags:
+  - label: "AI Red Teaming"
+    style: "accent"
+  - label: "Adversarial Testing"
+    style: "green"
+  - label: "Offensive Security"
+    style: ""
+  - label: "Security Research"
+    style: ""
+  - label: "Red / Purple Teaming"
+    style: ""
+  - label: "Security Innovation"
+    style: ""
+
+terminal:
+  whoami: "0xmh.phantombyte"
+  focus: "AI security | adversarial testing | red/purple teaming | practical security research"
+  motto: "Don't assume defenses work — prove it, then improve it."
+
+stats:
+  - num: "12"
+    label: "Research Projects"
+  - num: "34"
+    label: "GitHub Repos"
+  - num: "07"
+    label: "Publications"
+  - num: "4+"
+    label: "Years Active"

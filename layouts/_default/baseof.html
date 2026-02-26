@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} · {{ .Site.Title }}{{ end }}</title>
+  <meta name="description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Summary }}{{ end }}"/>
+  <link rel="stylesheet" href="/css/main.css"/>
+  <link rel="icon" type="image/png" href="/images/ghost-logo.png"/>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">
+    <img src="/images/ghost-logo.png" alt="PhantomByte Labs"/>
+    <span>PhantomByte.labs</span>
+    <span class="blink"></span>
+  </a>
+  <ul class="nav-links">
+    {{ range .Site.Menus.main }}
+    <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+    {{ end }}
+  </ul>
+  <div class="nav-status">
+    <span class="status-dot"></span>
+    <span>systems.online</span>
+  </div>
+</nav>
+
+<!-- PAGE CONTENT -->
+{{ block "main" . }}{{ end }}
+
+<!-- FOOTER -->
+{{ partial "footer.html" . }}
+
+{{ block "scripts" . }}{{ end }}
+</body>
+</html>

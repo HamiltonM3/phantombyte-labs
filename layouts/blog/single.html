@@ -1,0 +1,17 @@
+{{ define "main" }}
+
+<div class="page-header">
+  <a href="/blog/" class="back-link">← Back to Blog</a>
+  <div class="page-eyebrow">{{ .Params.category }} · {{ .Date.Format "Jan 02, 2006" }}</div>
+  <h1 class="page-title">{{ .Title }}</h1>
+  <div class="page-meta">
+    <div>{{ .ReadingTime }} min read</div>
+    <div><span>by</span> {{ .Site.Params.author }}</div>
+  </div>
+</div>
+
+<div class="page-body">
+  {{ .Content }}
+</div>
+
+{{ end }}

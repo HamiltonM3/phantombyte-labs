@@ -1,0 +1,37 @@
+{{ define "main" }}
+{{ $research := .Site.Data.research }}
+
+<div class="page-header">
+  <div class="page-eyebrow">03 // Research</div>
+  <h1 class="page-title">Research Projects</h1>
+  <div class="page-meta">
+    <div>{{ len $research.projects }} projects</div>
+  </div>
+</div>
+
+<section class="page-section">
+  
+<div class="research-disclaimer">
+  <span class="rd-icon">⚠</span>
+  All research published here represents independent personal work conducted through PhantomByte Labs.
+  Nothing on this site reflects the views, work, or intellectual property of any current or former employer.
+</div>
+
+  <div class="research-grid">
+    {{ range $research.projects }}
+    <div class="research-card">
+      <div class="rc-status {{ .status }}">
+        <span class="dot"></span>{{ .status_label }}
+      </div>
+      <div class="rc-title">{{ .title }}</div>
+      <div class="rc-abstract">{{ .abstract }}</div>
+      <div class="rc-tags">
+        {{ range .tags }}<span class="rc-tag">{{ . }}</span>{{ end }}
+      </div>
+      {{ if .link }}<a href="{{ .link }}" class="rc-link">→ {{ .link_label }}</a>{{ end }}
+    </div>
+    {{ end }}
+  </div>
+</section>
+
+{{ end }}

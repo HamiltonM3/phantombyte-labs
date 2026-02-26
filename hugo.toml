@@ -1,0 +1,41 @@
+baseURL = "https://phantombytelabs.com/"
+languageCode = "en-us"
+title = "PhantomByte Labs"
+
+[params]
+  description = "AI Red Team leader and offensive security researcher helping organizations understand and defend against real-world AI threats."
+  author = "Michael Hamilton"
+  github = "HamiltonM3"
+  email = "michael@phantombytelabs.com"
+  location = "USA"
+  tagline = "Helping organizations understand how real-world attackers exploit modern AI systems, applications, and infrastructure — then building the defenses to stop them."
+  status = "Actively Researching"
+
+[menu]
+  [[menu.main]]
+    name = "about"
+    url = "/#about"
+    weight = 1
+  [[menu.main]]
+    name = "bio"
+    url = "/bio/"
+    weight = 2
+  [[menu.main]]
+    name = "research"
+    url = "/research/"
+    weight = 3
+  [[menu.main]]
+    name = "projects"
+    url = "/projects/"
+    weight = 4
+  [[menu.main]]
+    name = "blog"
+    url = "/blog/"
+    weight = 5
+
+[markup]
+  [markup.highlight]
+    style = "monokai"
+    lineNos = false
+  [markup.goldmark.renderer]
+    unsafe = true

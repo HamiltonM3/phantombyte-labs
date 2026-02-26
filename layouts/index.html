@@ -1,0 +1,152 @@
+{{ define "main" }}
+{{ $about    := .Site.Data.about }}
+{{ $cv       := .Site.Data.cv }}
+{{ $research := .Site.Data.research }}
+{{ $posts    := where .Site.RegularPages "Section" "blog" }}
+{{ $posts     = $posts | first 5 }}
+
+<!-- ── HERO ── -->
+<section class="hero" id="home">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-glow-2"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Research Lab &amp; Personal Portfolio</div>
+    <div class="hero-logo-lockup">
+      <img src="/images/ghost-logo.png" alt="PhantomByte Labs Logo" class="hero-logo-img"/>
+      <h1 class="hero-title">
+        <span class="phantom">Phantom</span><span class="btye">Byte</span>
+        <span class="labs">Labs</span>
+      </h1>
+    </div>
+    <p class="hero-tagline">{{ .Site.Params.tagline }}</p>
+    <div class="hero-cta">
+      <a href="/research/" class="btn btn-primary">View Research</a>
+      <a href="/bio/" class="btn btn-ghost">Read CV</a>
+    </div>
+  </div>
+  <div class="hero-meta">
+    <div><span>location /</span> {{ .Site.Params.location }}</div>
+    <div><span>focus   /</span> security &amp; systems</div>
+    <div><span>status  /</span> {{ .Site.Params.status | lower }}</div>
+  </div>
+</section>
+
+<!-- ── ABOUT ── -->
+<section id="about">
+  <div class="section-header">
+    <span class="section-num">01 //</span>
+    <h2 class="section-title">About</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="about-grid">
+    <div class="about-text">
+      {{ range $about.paragraphs }}
+      <p>{{ . | safeHTML }}</p>
+      {{ end }}
+      <div class="about-tags">
+        {{ range $about.tags }}
+        <span class="tag {{ .style }}">{{ .label }}</span>
+        {{ end }}
+      </div>
+      <div class="term-block">
+        <div><span class="term-prompt">$ </span><span class="term-cmd">whoami</span></div>
+        <div class="term-out">&gt; {{ $about.terminal.whoami }}</div>
+        <div style="margin-top:0.5rem"><span class="term-prompt">$ </span><span class="term-cmd">cat focus.txt</span></div>
+        <div class="term-out">&gt; <span class="term-val">{{ $about.terminal.focus }}</span></div>
+        <div style="margin-top:0.5rem"><span class="term-prompt">$ </span><span class="term-cmd">cat /etc/motto</span></div>
+        <div class="term-out">&gt; <span class="term-val">"{{ $about.terminal.motto }}"</span></div>
+      </div>
+    </div>
+    <div class="about-stats">
+      {{ range $about.stats }}
+      <div class="stat-card">
+        <div class="stat-num">{{ .num }}</div>
+        <div class="stat-label">{{ .label }}</div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<!-- ── RESEARCH PREVIEW ── -->
+<section id="research" style="background:var(--bg2)">
+  <div class="section-header">
+    <span class="section-num">02 //</span>
+    <h2 class="section-title">Research Projects</h2>
+    <div class="section-line"></div>
+  </div>
+
+<div class="research-disclaimer">
+  <span class="rd-icon">⚠</span>
+  All research published here represents independent personal work conducted through PhantomByte Labs.
+  Nothing on this site reflects the views, work, or intellectual property of any current or former employer.
+</div>
+
+  <div class="research-grid">
+    {{ range $research.projects }}
+    <div class="research-card">
+      <div class="rc-status {{ .status }}">
+        <span class="dot"></span>{{ .status_label }}
+      </div>
+      <div class="rc-title">{{ .title }}</div>
+      <div class="rc-abstract">{{ .abstract }}</div>
+      <div class="rc-tags">
+        {{ range .tags }}<span class="rc-tag">{{ . }}</span>{{ end }}
+      </div>
+      {{ if .link }}<a href="{{ .link }}" class="rc-link">→ {{ .link_label }}</a>{{ end }}
+    </div>
+    {{ end }}
+  </div>
+  <div style="margin-top:2rem">
+    <a href="/research/" class="btn btn-ghost">View All Research →</a>
+  </div>
+</section>
+
+<!-- ── GITHUB PROJECTS ── -->
+<section id="projects">
+  <div class="section-header">
+    <span class="section-num">03 //</span>
+    <h2 class="section-title">GitHub Projects</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="projects-grid" id="github-projects-grid" data-username="{{ .Site.Params.github }}">
+    <div class="projects-loading">Fetching repos from GitHub</div>
+  </div>
+  <div style="margin-top:2rem">
+    <a href="https://github.com/{{ .Site.Params.github }}" target="_blank" rel="noopener" class="btn btn-ghost">View All on GitHub →</a>
+  </div>
+</section>
+
+<!-- ── BLOG PREVIEW — only shown when posts exist ── -->
+{{ if $posts }}
+<section id="blog" style="background:var(--bg2)">
+  <div class="section-header">
+    <span class="section-num">04 //</span>
+    <h2 class="section-title">Blog</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="blog-list">
+    {{ range $posts }}
+    <a href="{{ .Permalink }}" class="blog-post">
+      <div class="bp-date">{{ .Date.Format "Jan 02, 2006" }}</div>
+      <div class="bp-content">
+        <div class="bp-category">{{ .Params.category }}</div>
+        <div class="bp-title">{{ .Title }}</div>
+        <div class="bp-excerpt">{{ .Params.excerpt }}</div>
+      </div>
+      <div class="bp-arrow">→</div>
+    </a>
+    {{ end }}
+  </div>
+  <div style="margin-top:2rem">
+    <a href="/blog/" class="btn btn-ghost">All Posts →</a>
+  </div>
+</section>
+{{ end }}
+
+{{ end }}
+
+{{ define "scripts" }}
+<script src="/js/github.js"></script>
+{{ end }}

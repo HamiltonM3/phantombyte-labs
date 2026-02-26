@@ -1,0 +1,24 @@
+{{ define "main" }}
+
+<div class="page-header">
+  <div class="page-eyebrow">04 // Open Source</div>
+  <h1 class="page-title">GitHub Projects</h1>
+  <div class="page-meta">
+    <div>Live from <span>github.com/{{ .Site.Params.github }}</span></div>
+  </div>
+</div>
+
+<section class="page-section">
+  <div class="projects-grid" id="github-projects-grid" data-username="{{ .Site.Params.github }}">
+    <div class="projects-loading">Fetching repos from GitHub</div>
+  </div>
+  <div style="margin-top:2rem">
+    <a href="https://github.com/{{ .Site.Params.github }}" target="_blank" rel="noopener" class="btn btn-ghost">View All on GitHub →</a>
+  </div>
+</section>
+
+{{ end }}
+
+{{ define "scripts" }}
+<script src="/js/github.js"></script>
+{{ end }}

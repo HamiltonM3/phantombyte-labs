@@ -1,0 +1,38 @@
+{{ define "main" }}
+
+<div class="page-header">
+  <div class="page-eyebrow">Writing &amp; Notes</div>
+  <h1 class="page-title">Blog</h1>
+  <div class="page-meta">
+    <div>{{ len .Pages }} posts</div>
+  </div>
+</div>
+
+<section class="page-section">
+  {{ if .Pages }}
+  <div class="blog-list">
+    {{ range .Pages.ByDate.Reverse }}
+    <a href="{{ .Permalink }}" class="blog-post">
+      <div class="bp-date">{{ .Date.Format "Jan 02, 2006" }}</div>
+      <div class="bp-content">
+        <div class="bp-category">{{ .Params.category }}</div>
+        <div class="bp-title">{{ .Title }}</div>
+        <div class="bp-excerpt">{{ .Params.excerpt }}</div>
+      </div>
+      <div class="bp-arrow">→</div>
+    </a>
+    {{ end }}
+  </div>
+  {{ else }}
+  <div class="blog-empty">
+    <div class="term-block" style="max-width:480px;">
+      <div><span class="term-prompt">$ </span><span class="term-cmd">ls ./posts</span></div>
+      <div class="term-out">&gt; no posts yet — check back soon.</div>
+      <div style="margin-top:0.5rem"><span class="term-prompt">$ </span><span class="term-cmd">cat status.txt</span></div>
+      <div class="term-out">&gt; <span class="term-val">research in progress. writing coming.</span></div>
+    </div>
+  </div>
+  {{ end }}
+</section>
+
+{{ end }}

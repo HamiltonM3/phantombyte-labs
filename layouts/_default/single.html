@@ -1,0 +1,139 @@
+{{ define "main" }}
+{{ $cv := .Site.Data.cv }}
+
+<div class="page-header">
+  <div class="page-eyebrow">02 // Bio &amp; CV</div>
+  <h1 class="page-title">{{ $cv.name }}</h1>
+  <div class="page-meta">
+    <div>{{ $cv.title }}</div>
+  </div>
+</div>
+
+<section class="page-section" style="background:var(--bg2)">
+  <div class="cv-layout">
+
+    <!-- SIDEBAR -->
+    <div class="cv-sidebar">
+      <div class="cv-avatar">
+        {{ if $cv.photo }}
+        <img src="{{ $cv.photo }}" alt="{{ $cv.name }}"/>
+        {{ else }}
+        [ photo ]
+        {{ end }}
+      </div>
+
+      <div class="cv-contact">
+        {{ with $cv.contact.email }}
+        <div class="cv-contact-item">
+          <span class="ci-label">email</span>
+          <a href="mailto:{{ . }}">{{ . }}</a>
+        </div>
+        {{ end }}
+        {{ with $cv.contact.github }}
+        <div class="cv-contact-item">
+          <span class="ci-label">github</span>
+          <a href="https://github.com/{{ . }}" target="_blank">github.com/{{ . }}</a>
+        </div>
+        {{ end }}
+        {{ with $cv.contact.twitter }}
+        <div class="cv-contact-item">
+          <span class="ci-label">twitter</span>
+          <span style="color:var(--text3)">{{ . }}</span>
+        </div>
+        {{ end }}
+        {{ with $cv.contact.pgp }}
+        <div class="cv-contact-item">
+          <span class="ci-label">pgp</span>
+          <span style="color:var(--text3)">{{ . }}</span>
+        </div>
+        {{ end }}
+      </div>
+
+      <div class="cv-skills-section">
+        <div class="cv-skills-title">Technical Skills</div>
+        {{ range $cv.skills }}
+        <div class="skill-bar-row">
+          <div class="skill-bar-label">
+            <span>{{ .name }}</span>
+            <span class="skill-pct">{{ .level }}%</span>
+          </div>
+          <div class="skill-bar-track">
+            <div class="skill-bar-fill" style="width:{{ .level }}%"></div>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+
+      {{ with $cv.cv_pdf }}
+      <div style="margin-top:2rem">
+        <a href="{{ . }}" class="btn btn-ghost" download>⬇ Download CV (PDF)</a>
+      </div>
+      {{ end }}
+    </div>
+
+    <!-- MAIN CV -->
+    <div class="cv-main">
+
+      <div class="cv-section">
+        <div class="cv-section-title">Education</div>
+        {{ range $cv.education }}
+        <div class="cv-entry">
+          <div class="cv-entry-date">{{ .date }}</div>
+          <div>
+            <div class="cv-entry-title">{{ .title }}</div>
+            <div class="cv-entry-org">{{ .org }}</div>
+            <div class="cv-entry-desc">{{ .description }}</div>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+
+      <div class="cv-section">
+        <div class="cv-section-title">Experience</div>
+        {{ range $cv.experience }}
+        <div class="cv-entry">
+          <div class="cv-entry-date">{{ .date }}</div>
+          <div>
+            <div class="cv-entry-title">{{ .title }}</div>
+            <div class="cv-entry-org">{{ .org }}</div>
+            <div class="cv-entry-desc">{{ .description }}</div>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+
+      <div class="cv-section">
+        <div class="cv-section-title">Publications &amp; Talks</div>
+        {{ range $cv.publications }}
+        <div class="cv-entry">
+          <div class="cv-entry-date">{{ .date }}</div>
+          <div>
+            <div class="cv-entry-title">{{ .title }}</div>
+            <div class="cv-entry-org">{{ .org }}</div>
+            {{ with .description }}<div class="cv-entry-desc">{{ . }}</div>{{ end }}
+            {{ with .link }}<a href="{{ . }}" target="_blank" class="cv-entry-link">→ View paper</a>{{ end }}
+          </div>
+        </div>
+        {{ end }}
+      </div>
+
+      {{ if $cv.certifications }}
+      <div class="cv-section">
+        <div class="cv-section-title">Certifications</div>
+        {{ range $cv.certifications }}
+        <div class="cv-entry">
+          <div class="cv-entry-date">{{ .date }}</div>
+          <div>
+            <div class="cv-entry-title">{{ .title }}</div>
+            <div class="cv-entry-org">{{ .org }}</div>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+      {{ end }}
+
+    </div>
+  </div>
+</section>
+
+{{ end }}

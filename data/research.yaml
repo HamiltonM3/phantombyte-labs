@@ -1,0 +1,61 @@
+projects:
+- title: Agentic AI Red Team Testing Framework
+  status: active
+  status_label: Active Research
+  abstract: A research and testing framework for evaluating the security of agentic
+    AI systems in enterprise environments. The focus is on building structured, repeatable
+    approaches for assessing how AI systems interact with tools, data, and connected
+    workflows under adversarial conditions.
+  tags:
+  - Agentic AI
+  - AI Red Teaming
+  - Offensive Security
+  - Enterprise Security
+  - Testing Methodology
+  link: /research/agentic-ai-red-team-framework/
+  link_label: Read more
+- title: Automated Vulnerability Validation via Agentic Security Workflows
+  status: active
+  status_label: Active Research
+  abstract: A research project exploring how AI-driven workflows can help security
+    teams validate vulnerabilities and prioritize response more efficiently. The goal
+    is to improve decision-making by producing clearer, evidence-based outcomes that
+    support remediation and operational coordination.
+  tags:
+  - Security Automation
+  - Agentic Systems
+  - Vulnerability Management
+  - Security Operations
+  - Research
+  link: /research/automated-vuln-validation/
+  link_label: Read more
+- title: GAN-Assisted Adversarial Prompt Generation for Security Testing
+  status: ongoing
+  status_label: Prototype / Experimental
+  abstract: An experimental research effort investigating whether generative methods
+    can improve the breadth and efficiency of AI security testing inputs. The project
+    is focused on expanding evaluation coverage and improving testing quality in a
+    controlled, research-oriented setting.
+  tags:
+  - Adversarial ML
+  - LLM Security
+  - AI Red Teaming
+  - Security Testing
+  - Research
+  link: /research/gan-adversarial-prompts/
+  link_label: Read more
+- title: Runtime Decision-Tree Security Filter for AI Systems
+  status: ongoing
+  status_label: Prototype
+  abstract: A prototype runtime security concept designed to support safer AI system
+    operation through structured policy and decision logic. This work explores practical
+    ways to complement model-level safeguards with additional layers of operational
+    security controls.
+  tags:
+  - Runtime Security
+  - AI Guardrails
+  - Detection
+  - Policy Enforcement
+  - AI Security
+  link: /research/runtime-security-filter/
+  link_label: Read more

@@ -1,0 +1,128 @@
+name: Michael Hamilton
+title: AI Red Team Leader, Offensive Security Researcher & Security Innovation Builder
+photo: /images/profile.jpg
+cv_pdf: /files/cv.pdf
+contact:
+  email: michael@phantombytelabs.com
+  github: HamiltonM3
+  pgp: ''
+skills:
+- name: AI Red Teaming
+  level: 95
+- name: Adversarial ML / LLM Testing
+  level: 90
+- name: Offensive Security
+  level: 90
+- name: Penetration Testing
+  level: 85
+- name: Security Strategy
+  level: 85
+- name: Applied Security Research
+  level: 80
+education:
+- date: In Progress
+  title: Master's Degree — Artificial Intelligence & Machine Learning
+  org: University of Massachusetts Amherst
+  description: 'Capstone Project: CouncilBot — a foundational mental health chat assistant
+    model, built from the ground up to explore safe, context-aware conversational
+    AI.'
+- date: Completed
+  title: Graduate Certificate — Penetration Testing & Ethical Hacking
+  org: SANS Technology Institute
+  description: Graduate-level programme focused on advanced offensive security techniques,
+    exploitation, and ethical hacking methodology.
+- date: Completed
+  title: Bachelor's Degree — Cyber Security & Business Administration
+  org: Your Institution · Location
+  description: Dual focus on technical security fundamentals and business administration.
+certifications:
+- date: Active
+  title: CISSP — Certified Information Systems Security Professional
+  org: ISC²
+  description: ''
+- date: Active
+  title: GPEN — GIAC Penetration Tester
+  org: GIAC / SANS
+  description: ''
+- date: Active
+  title: GCPN — GIAC Cloud Penetration Tester
+  org: GIAC / SANS
+  description: ''
+- date: Active
+  title: GWAPT — GIAC Web Application Penetration Tester
+  org: GIAC / SANS
+  description: ''
+- date: Active
+  title: GCIH — GIAC Certified Incident Handler
+  org: GIAC / SANS
+  description: ''
+- date: Active
+  title: CompTIA PenTest+
+  org: CompTIA
+  description: ''
+- date: Active
+  title: CEH — Certified Ethical Hacker
+  org: EC-Council
+  description: ''
+- date: Active
+  title: CAPM — Certified Associate in Project Management
+  org: PMI
+  description: ''
+- date: Active
+  title: Microsoft Azure Fundamentals (AZ-900)
+  org: Microsoft
+  description: ''
+- date: Active
+  title: CompTIA IT Fundamentals (ITF+)
+  org: CompTIA
+  description: ''
+additional_training:
+- date: Completed
+  title: AI Red Teaming
+  org: Hack The Box
+  description: ''
+- date: Completed
+  title: Generative AI Explained
+  org: NVIDIA Deep Learning Institute
+  description: ''
+- date: Completed
+  title: AI Red Teaming Practice
+  org: Microsoft
+  description: ''
+experience:
+- date: 2023 – present
+  title: Associate Director, Red Team Lead
+  org: KPMG
+  description: Lead AI Red Team operations and adversarial testing efforts identifying
+    real-world weaknesses in AI systems, applications, and supporting infrastructure.
+    Oversee and scale offensive security capabilities across AI Red Teaming, Red Teaming,
+    Purple Teaming, and adversarial testing initiatives. Develop risk-based testing
+    frameworks for modern AI systems including GenAI, Agentic AI, and AI-enabled enterprise
+    workflows. Drive maturity of testing approaches for Agentic AI systems — evaluating
+    tool use, authorization boundaries, data access, workflow abuse, and cross-system
+    interactions. Automated red team testing through custom scripting and Agentic
+    AI, reducing manual testing by 75% while improving repeatability, scalability,
+    and standardization.
+- date: 2021 – 2023
+  title: Red Team Lead
+  org: Booz Allen Hamilton
+  description: Led and performed full-spectrum offensive security and red team activities
+    supporting Army Cyber Command mission requirements. Planned and executed adversarial
+    assessments to evaluate real-world security posture, operational readiness, and
+    defensive effectiveness. Developed realistic attack scenarios and testing plans
+    aligned to mission objectives and threat behavior. Delivered actionable findings
+    and attack-path narratives to strengthen defensive controls, detection, and response
+    capabilities.
+- date: Prior
+  title: Offensive Cyber Operations Director & Digital Network Exploitation Analyst
+  org: U.S. Air Force & National Security Roles
+  description: Conducted offensive cyber operations, adversarial assessments, and
+    mission-focused red team activities across complex enterprise and national-security
+    environments. Applied an operator mindset to identify exploitable weaknesses across
+    systems, processes, and defensive assumptions. Performed cradle-to-grave analysis
+    of adversary CNO operations including network, malware, TTPs, and operations.
+    Led automation effort integrating analytic and data-driven solutions with Python
+    and Jupyter Notebook, reducing manual processes from 24+ hours per day to under
+    2 hours. Stood up the first Air Force Reserve cyber training (CTF) event, training
+    70 offensive cyber operations teams.
+publications: []
